@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Carbon\Carbon;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,3 +16,22 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::resource('posts', \App\Http\Controllers\PostsController::class);
+
+Route::get('/dates', function (){
+    $date = new DateTime("+1 week");
+
+    echo $date->format('m-d-y');
+
+    echo '<br>';
+
+   echo Carbon::now()->addDays(10)->diffForHumans();
+
+   echo '<br>';
+    echo Carbon::now()->subMonths(4)->diffForHumans();
+});
+
+
+Route::get('/getname', function (){
+   $user = User::find(1);
+    echo $user;
+});

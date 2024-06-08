@@ -8,8 +8,9 @@
                 </li>
             @endforeach
         </ul>
-        {{html()->a('/posts/create', 'create new post')}}
+        {{html()->a('/posts/create', 'create new post')->class("btn px-5 py-2 rounded-md bg-gray-800 text-white inline-block hover:bg-gray-600")}}
 @endsection
 
 @yield('footer')
+
 
